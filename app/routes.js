@@ -45,6 +45,7 @@ function checkToken(req, res, next){
     if (req.body.token == "QxXkiXf3tFQDhAQa17hfQmS6")
         next();
     console.log(req.body);
+    res.send();
 }
 
 function testLoginEpitech(req, res, next){
