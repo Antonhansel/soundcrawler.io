@@ -100,8 +100,8 @@ h1 {
   font-size: 55px;
   margin: 0; }
   h1 span {
-    opacity: 0.1;
-    transition: opacity 1.5s; }
+    opacity: 0;
+    transition: opacity 2s; }
     .is-active h1 span {
       opacity: 1;
-      transition-delay: 0.6s; }
+      transition-delay: 1.5s; }

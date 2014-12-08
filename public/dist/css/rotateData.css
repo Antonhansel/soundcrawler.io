@@ -1,0 +1,99 @@
+.circle1{
+  position: absolute;
+  left:0;
+  right:0;
+  margin:0 auto;
+  border-radius: 100%;
+  width: 400px;
+  height: 400px;
+}
+
+.circle1{
+  -webkit-animation: rotateAntiClockWise 45s linear infinite;
+  border: 3px dotted #007FFF;
+}
+
+.circle2{
+  position: absolute;
+  left:0;
+  right:0;
+  margin:0 auto;
+  border-radius: 100%;
+  width: 350px;
+  height: 350px;
+  top: 10px;
+}
+
+.circle2{
+  -webkit-animation: rotateAntiClockWise 35s linear infinite;
+  border: 6px dotted #104E8B;
+}
+
+.circle3{
+  position: absolute;
+  left:0;
+  right:0;
+  margin:0 auto;
+  border-radius: 100%;
+  width: 370px;
+  height: 370px;
+  top: 15px;
+}
+
+.circle3{
+  -webkit-animation: rotateClockWise 55s linear infinite;
+  border: 2px dashed #1E90FF;
+}
+
+.circle4{
+  position: absolute;
+  left:0;
+  right:0;
+  margin:0 auto;
+  border-radius: 100%;
+  width: 380px;
+  height: 380px;
+  top: 10px;
+}
+
+.circle4{
+  -webkit-animation: rotateClockWise 25s linear infinite;
+  border: 2px solid #1E90FF;
+}
+
+.effectButton {
+  box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #27ae60, 0 0 0 0 #FFF, 0 0 0 0 #27ae60;
+    display: inline-block;
+  height: 100px;
+  width: 100px;
+  margin: 50px;
+
+  border-radius: 190px;
+  border: 3px solid #27ae60;
+  background: #2ecc71;
+  text-align: center;
+
+  text-decoration: none;
+  color: #27ae60;
+
+  transition: all .2s;
+  
+  &:hover {
+    border-color: #FFF;
+    box-shadow: 0 0 0 7px #FFF, 0 0 0 10px #27ae60, 0 0 0 17px #FFF, 0 0 0 20px #27ae60;
+  }
+  
+  &:active {
+    box-shadow: 0 0 0 15px #FFF, 0 0 0 18px #27ae60, 0 0 0 17px #FFF, 0 0 0 20px #27ae60;
+  }
+}
+
+@-webkit-keyframes rotateClockWise {
+  from{ -webkit-transform: rotate(0deg);   }
+  to{   -webkit-transform: rotate(360deg); }
+}
+
+@-webkit-keyframes rotateAntiClockWise {
+  from{ -webkit-transform: rotate(0deg);   }
+  to{   -webkit-transform: rotate(-360deg); }
+}
