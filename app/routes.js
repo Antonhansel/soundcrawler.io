@@ -1,6 +1,6 @@
 // app/routes.js
 var request = require('request');
-var slack = require('slack');
+var slack = require('./slack.js');
 
 module.exports = function(app, passport) {
     app.get('/', function(req, res) { res.render('index.ejs');});
