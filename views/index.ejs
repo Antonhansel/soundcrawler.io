@@ -3,7 +3,9 @@
 <head>
     <title>SoundCrawler</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <link href="dist/css/logo.css" rel="stylesheet">
     <script type="text/javascript" src"anim.js"> </script>
     <style>
         body { 
@@ -15,16 +17,35 @@
       </style>
   </head>
   <div class="container">
-
-    <div class="jumbotron text-center">
-        <h1><span class="fa fa-lock"></span> SoundCrawler Pretty Stats</h1>
-
-        <p>Login or Register</p>
-
+     <div class="containerlogo">
+            <div class="bar color-10"><span class="bar-inner"></span></div>
+            <div class="bar color-9"><span class="bar-inner"></span></div>
+            <div class="bar color-8"><span class="bar-inner"></span></div>
+            <div class="bar color-9"><span class="bar-inner"></span></div>
+            <div class="bar color-10"><span class="bar-inner"></span></div>
+            <div class="bar color-11"><span class="bar-inner"></span></div>
+            <div class="bar color-12"><span class="bar-inner"></span></div>
+            <div class="bar color-13"><span class="bar-inner"></span></div>
+            <div class="bar color-12"><span class="bar-inner"></span></div>
+            <div class="bar color-10"><span class="bar-inner"></span></div>
+            <div class="bar color-9"><span class="bar-inner"></span></div>
+            <div class="bar color-8"><span class="bar-inner"></span></div>
+            <div class="bar color-7"><span class="bar-inner"></span></div>
+            <div class="bar color-8"><span class="bar-inner"></span></div>
+    </div>
+        <h1>
+            <span>SoundCrawler</span>
+        </h1>
+    <div class="jumbotron text-center" style="margin-top: 10px">
+    <p> Login or signup to access stats </p>
         <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
         <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
     </div>
-
-</div>
+  </div>
+    <script>
+        jQuery(document).ready(function() {
+        $('body').addClass('is-active');
+        });
+    </script>
 </body>
 </html>

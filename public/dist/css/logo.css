@@ -14,7 +14,8 @@
   height: 100%;
   margin: 0 1px;
   border-radius: 12px;
-  position: relative; }
+  position: relative;
+}
 
 .bar-inner {
   position: absolute;
