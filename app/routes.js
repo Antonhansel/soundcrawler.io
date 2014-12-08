@@ -11,7 +11,7 @@ module.exports = function(app, passport) {
         res.render('login.ejs', { message: req.flash('loginMessage') }); 
     });
     app.post('/login', passport.authenticate('local-login', {
-        successRedirect : '/stat', // redirect to the secure profile section
+        successRedirect : '/stats', // redirect to the secure profile section
         failureRedirect : '/login', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
@@ -31,9 +31,7 @@ module.exports = function(app, passport) {
     }));
 
     app.get('/stats', isLoggedIn, function(req, res) {
-        res.render('stats.ejs', {
-            user : req.user
-        });
+        res.render('stats.ejs');
     });
 
     app.get('/logout', logOut);
@@ -41,12 +39,12 @@ module.exports = function(app, passport) {
     ////////////////////////////////////
     ///////////// SLACK ////////////////
     app.post('/incoming', checkToken);
-
 };
 
 function checkToken(req, res, next){
     if (req.body.token == "QxXkiXf3tFQDhAQa17hfQmS6")
         next();
+    console.log(req.body);
 }
 
 function testLoginEpitech(req, res, next){
