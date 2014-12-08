@@ -1,5 +1,6 @@
 // app/routes.js
 var request = require('request');
+var slack = require('slack');
 
 module.exports = function(app, passport) {
     app.get('/', function(req, res) { res.render('index.ejs');});
@@ -38,14 +39,12 @@ module.exports = function(app, passport) {
 
     ////////////////////////////////////
     ///////////// SLACK ////////////////
-    app.post('/incoming', checkToken);
+    app.post('/incoming', checkToken, slack.saveMessage);
 };
 
 function checkToken(req, res, next){
     if (req.body.token == "QxXkiXf3tFQDhAQa17hfQmS6")
         next();
-    console.log(req.body);
-    res.send();
 }
 
 function testLoginEpitech(req, res, next){
