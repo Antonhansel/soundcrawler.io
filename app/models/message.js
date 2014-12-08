@@ -2,7 +2,7 @@
 // load the things we need
 var mongoose = require('mongoose');
 
-// define the schema for our user model
+// define the schema for our message model
 var userSchema = mongoose.Schema({
     channel_name      	: String,
     user_name   		: String,

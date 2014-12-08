@@ -6,6 +6,7 @@ exports.saveMessage = function(req, res){
 	message.user_name = req.body.user_name;
 	message.text = req.body.text;
 	message.timestamp = req.body.timestamp;
+	
 	message.save(function(err){
 		if (err) throw err;
 		return;
