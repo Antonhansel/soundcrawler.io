@@ -10,9 +10,14 @@
     
     background: #4679BD; 
     box-shadow: 0 0 3px gray;
+
+      position:  relative;
+  z-index: 3;
 }
 .round-button-circle:hover {
   background:#30588e;
+    position:  relative;
+  z-index: 3;
 }
 .round-button a {
     display:block;
@@ -22,7 +27,8 @@
     padding-bottom:50%;
   line-height:1em;
   margin-top:-0.5em;
-    
+  position:  relative;
+  z-index: 3;
   text-align:center;
   color:#e2eaf3;
     font-size:1.2em;

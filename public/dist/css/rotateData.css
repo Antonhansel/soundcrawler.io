@@ -9,6 +9,7 @@
 
   -webkit-animation: rotateAntiClockWise 45s linear infinite;
   border: 3px dotted #007FFF;
+  z-index: 2;
 }
 
 .circle2{
@@ -21,6 +22,7 @@
   height: 350px;
   top: 25px;
 
+  z-index: 2;
   -webkit-animation: rotateAntiClockWise 35s linear infinite;
   border: 6px dotted #104E8B;
 }
@@ -35,6 +37,7 @@
   height: 370px;
   top: 15px;
 
+  z-index: 2;
   -webkit-animation: rotateClockWise 55s linear infinite;
   border: 2px dashed #1E90FF;
 }
@@ -49,6 +52,7 @@
   height: 380px;
   top: 10px;
 
+  z-index: 2;
   -webkit-animation: rotateClockWise 25s linear infinite;
   border: 2px solid #1E90FF;
 }
