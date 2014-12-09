@@ -51,7 +51,7 @@ function testLoginEpitech(req, res, next){
     var logins = ["ribeau_a", "chouag_m", "pensat_f", "davic_c", "roche_b", "chesse_m", 
     "sabot_t", "farabe_j"];
     var found = false;
-    for (var i = 0; i < logins.length; logins++){
+    for (var i = 0; i < logins.length; i++){
         if (logins[i] == req.body.login_x){
             found = true;
         }
