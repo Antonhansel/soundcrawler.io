@@ -74,8 +74,8 @@ function testLoginEpitech(req, res, next){
             }
         });
     } else {
-    req.flash('signupMessage', "Wrong tek credentials");
-    res.redirect('/signup');
+        req.flash('signupMessage', "Login unauthorized");
+        res.redirect('/signup');
     }
 }
 
