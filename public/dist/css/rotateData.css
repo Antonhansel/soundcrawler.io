@@ -6,9 +6,7 @@
   border-radius: 100%;
   width: 400px;
   height: 400px;
-}
 
-.circle1{
   -webkit-animation: rotateAntiClockWise 45s linear infinite;
   border: 3px dotted #007FFF;
 }
@@ -21,10 +19,8 @@
   border-radius: 100%;
   width: 350px;
   height: 350px;
-  top: 10px;
-}
+  top: 25px;
 
-.circle2{
   -webkit-animation: rotateAntiClockWise 35s linear infinite;
   border: 6px dotted #104E8B;
 }
@@ -38,9 +34,7 @@
   width: 370px;
   height: 370px;
   top: 15px;
-}
 
-.circle3{
   -webkit-animation: rotateClockWise 55s linear infinite;
   border: 2px dashed #1E90FF;
 }
@@ -54,9 +48,7 @@
   width: 380px;
   height: 380px;
   top: 10px;
-}
 
-.circle4{
   -webkit-animation: rotateClockWise 25s linear infinite;
   border: 2px solid #1E90FF;
 }
