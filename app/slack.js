@@ -11,4 +11,5 @@ exports.saveMessage = function(req, res){
 		if (err) throw err;
 		return;
 	});
+	res.end();
 }
