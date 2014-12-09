@@ -2,6 +2,7 @@ var Message = require('./models/message.js');
 
 exports.saveMessage = function(req, res){
 	var message = new Message();
+	message.user_id = req.body.user_id;
 	message.channel_name = req.body.channel_name;
 	message.user_name = req.body.user_name;
 	message.text = req.body.text;

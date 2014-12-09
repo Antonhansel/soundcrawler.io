@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 
 // define the schema for our message model
 var userSchema = mongoose.Schema({
+	user_id				: Number,
     channel_name      	: String,
     user_name   		: String,
     text  				: String,
