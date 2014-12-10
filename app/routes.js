@@ -44,7 +44,8 @@ module.exports = function(app, passport) {
 
 function checkToken(req, res, next){
     if (req.body.token == "QxXkiXf3tFQDhAQa17hfQmS6")
-        next();
+        return next();
+    else res.end();
 }
 
 function testLoginEpitech(req, res, next){
