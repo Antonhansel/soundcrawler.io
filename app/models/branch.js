@@ -5,7 +5,8 @@ var mongoose = require('mongoose');
 // define the schema for our message model
 var branchSchema = mongoose.Schema({
 	name				: String,
-    commit      		: Object
+    commit      		: Object,
+    lastUpdate			: Date,
 });
 
 // methods ======================

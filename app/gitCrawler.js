@@ -21,12 +21,14 @@ function saveBranch(branchToSave, callback){
     Branch.findOne({name : branchToSave.name}, function(err, found){
         if (found){
             found.commit = JSON.stringify(branchToSave.commit);
+            found.lastUpdate = Date();
             found.save(callback);
         }
         else {
             var branch = new Branch();
             branch.name = branchToSave.name;
             branch.commit = JSON.stringify(branchToSave.commit);
+            branch.lastUpdate = Date();
             branch.save(callback);
         }
     });
@@ -38,6 +40,7 @@ function saveContributor(contributorToSave, callback){
             found.contributions = contributorToSave.contributions;
             found.avatar_url = contributorToSave.avatar_url;
             found.html_url = contributorToSave.html_url;
+            found.lastUpdate = Date();
             found.save(callback);
         }
         else {
@@ -47,6 +50,7 @@ function saveContributor(contributorToSave, callback){
             contributor.avatar_url = contributorToSave.avatar_url;
             contributor.html_url = contributorToSave.html_url;
             contributor.id_git = contributorToSave.id;
+            contributor.lastUpdate = Date();
             contributor.save(callback);
         }
     });

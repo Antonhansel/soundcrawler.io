@@ -8,7 +8,8 @@ var contributorSchema = mongoose.Schema({
     contributions      	: Number,
     avatar_url			: String,
     html_url			: String,
-    id_git				: String
+    id_git				: String,
+    lastUpdate			: Date
 });
 
 // methods ======================
