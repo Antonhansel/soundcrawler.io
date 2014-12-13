@@ -17,11 +17,39 @@ var request = require('request'),
     'auth' : {'user' : token, 'pass': 'x-oauth-basic'}
 };
 
-function saveBranch(branch, callback){
-    
+function saveBranch(branchToSave, callback){
+    Branch.findOne({name : branchToSave.name}, function(err, found){
+        if (found){
+            found.commit = JSON.stringify(branchToSave.commit);
+            found.save(callback);
+        }
+        else {
+            var branch = new Branch();
+            branch.name = branchToSave.name;
+            branch.commit = JSON.stringify(branchToSave.commit);
+            branch.save(callback);
+        }
+    });
 }
 
-function saveContributor(contributor, callback){
+function saveContributor(contributorToSave, callback){
+    Contributor.findOne({id_git : contributorToSave.id}, function(err, found){
+        if (found){
+            found.contributions = contributorToSave.contributions;
+            found.avatar_url = contributorToSave.avatar_url;
+            found.html_url = contributorToSave.html_url;
+            found.save(callback);
+        }
+        else {
+            var contributor = new Contributor();
+            contributor.login = contributorToSave.login;
+            contributor.contributions = contributorToSave.contributions;
+            contributor.avatar_url = contributorToSave.avatar_url;
+            contributor.html_url = contributorToSave.html_url;
+            contributor.id_git = contributorToSave.id;
+            contributor.save(callback);
+        }
+    });
 }
 
 exports.refreshData = function(){
@@ -49,6 +77,7 @@ exports.refreshData = function(){
                         async.map(results.getContributors, saveContributor, callback);
                     },
                 }, function(err, results){
+                    if (err) throw err;
                     }
                 );
             }
