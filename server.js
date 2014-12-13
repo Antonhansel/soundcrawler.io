@@ -18,6 +18,9 @@ var configDB = require('./config/database.js');
 
 var path = require('path');
 
+var git = require('./app/gitCrawler.js');
+git.refreshData();
+
 // configuration ===============================================================
 mongoose.connect(configDB.url); // connect to our database
 
