@@ -17,7 +17,13 @@
 		"token" : "QxXkiXf3tFQDhAQa17hfQmS6"
 	},
 	"epitech" : {
-		"logins" : ["ribeau_a", "chouag_m", "pensat_f", "davic_c", "roche_b", "chesse_m", 
-    "sabot_t", "farabe_j"]
+		"logins" : ["ribeau_a", 
+					"chouag_m", 
+					"pensat_f", 
+					"davic_c", 
+					"roche_b", 
+					"chesse_m", 
+    				"sabot_t", 
+    				"farabe_j"]
 	}
 }
