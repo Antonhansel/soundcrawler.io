@@ -1,10 +1,12 @@
 // app/routes.js
 var request = require('request');
 var slack = require('./slack.js');
+var crunch = require('./crunch.js');
 
 module.exports = function(app, passport) {
     app.get('/', function(req, res) { res.render('index.ejs');});
 
+    app.get('/logout', logOut);
     //////////////////////////////////////
     //////////////LOGIN///////////////////
     //////////////////////////////////////
@@ -16,7 +18,6 @@ module.exports = function(app, passport) {
         failureRedirect : '/login', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
-
     //////////////////////////////////////
     //////////////SIGNUP//////////////////
     //////////////////////////////////////
@@ -30,13 +31,14 @@ module.exports = function(app, passport) {
         failureRedirect : '/signup', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
-
+    //////////////////////////////////////
+    ///////////////STATS//////////////////
+    //////////////////////////////////////
     app.get('/stats', isLoggedIn, function(req, res) {
         res.render('stats.ejs');
     });
-
-    app.get('/logout', logOut);
-
+    app.post('/commits', isLoggedIn, crunch.commits);
+    app.post('/contributors', /*isLoggedIn,*/ crunch.contributors);
     ////////////////////////////////////
     ///////////// SLACK ////////////////
     app.post('/incoming', checkToken, slack.saveMessage);

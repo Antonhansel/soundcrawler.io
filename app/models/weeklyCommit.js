@@ -4,13 +4,13 @@ var mongoose = require('mongoose');
 
 // define the schema for our message model
 var weeklyCommitSchema = mongoose.Schema({
-	contributor : Number,
+	contributor : String,
 	week 		: Number,
 	add 		: Number,
-	deletions 	: Number,
+	del 		: Number,
 	commits 	: Number,
 });
 
 // methods ======================
-// create the model for contributor and expose it to our app
-module.exports = mongoose.model('WeeklyCommit', contributorSchema);
+// create the model for weeklycommit and expose it to our app
+module.exports = mongoose.model('WeeklyCommit', weeklyCommitSchema);

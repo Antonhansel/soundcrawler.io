@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 var contributorSchema = mongoose.Schema({
 	login				: String,
     contributions      	: Number,
-    weekly 				: Object,
+    weekly 				: [String],
     avatar_url			: String,
     html_url			: String,
     id_git				: String,
