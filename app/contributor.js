@@ -25,3 +25,10 @@ exports.saveContributor = function(contributorToSave, callback){
 		});
 	});
 }
+
+exports.getContributors = function(req, res){
+	Contributors.find({}, function(err, results){
+		if (err) {throw err; res.send({error : "Unable to get contributor"})}
+		else res.send(results);
+	});
+}

@@ -1,32 +1,28 @@
 var async = require('async');
 var branch = require('./branch.js');
 var contributor = require('./contributor.js');
+var config = require('../config/config.json');
 
 var request = require('request'),
-    token = "aea3b9b33ac8d1d9d6767ccbc324e195f99b82ee";
-    url = "https://api.github.com",
-    userAgent = "statTracker",
-    repository = "statTracker";
-    owner = "antonhansel"
     options = {
     url: '',
     headers: {
-        'User-Agent' : 'statTracker',
+        'User-Agent' : config.github_api.useragent,
         'Content-Type' : 'application/json'
     },
-    'auth' : {'user' : token, 'pass': 'x-oauth-basic'}
+    'auth' : {'user' : config.github_api.token, 'pass': 'x-oauth-basic'}
 };
 
 exports.refreshData = function(){
     async.parallel({
         getBranchs: function(callback){
-            options.url = url + "/repos/" + owner + "/"+ repository + "/branches";
+            options.url = config.github_api.url + "/repos/" + config.github_api.owner + "/"+ config.github_api.repository + "/branches";
             request.get(options, function(err, response, body){
             callback(err, JSON.parse(response.body));
             })
         },
         getContributors: function(callback){
-            options.url = url + "/repos/" + owner + "/"+ repository + "/stats/contributors";
+            options.url = config.github_api.url + "/repos/" + config.github_api.owner + "/"+ config.github_api.repository + "/stats/contributors";
             request.get(options, function(err, response, body){
             callback(err, JSON.parse(response.body));
             })

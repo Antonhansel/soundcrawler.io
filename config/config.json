@@ -1,0 +1,23 @@
+{
+	"db" : {
+		"url" : "mongodb://stattracker:jMeVpFup@ds055990.mongolab.com:55990/stattracker"
+	},
+	"github_api" : {
+		"refresh" : "5000",
+		"token" : "aea3b9b33ac8d1d9d6767ccbc324e195f99b82ee",
+		"useragent" : "stattracker",
+		"owner" : "antonhansel",
+		"repository" : "stattracker",
+		"url" : "https://api.github.com"
+	},
+	"server" : {
+		"secret" : "ilovescotchscotchyscotchscotch"
+	},
+	"slack" : {
+		"token" : "QxXkiXf3tFQDhAQa17hfQmS6"
+	},
+	"epitech" : {
+		"logins" : ["ribeau_a", "chouag_m", "pensat_f", "davic_c", "roche_b", "chesse_m", 
+    "sabot_t", "farabe_j"]
+	}
+}

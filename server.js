@@ -1,5 +1,5 @@
 // server.js
-
+var config = require('./config/config.json');
 // set up ======================================================================
 // get all the tools we need
 var express  = require('express');
@@ -13,16 +13,13 @@ var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
-
-var configDB = require('./config/database.js');
-
 var path = require('path');
 
 var git = require('./app/gitCrawler.js');
 git.refreshData();
 
 // configuration ===============================================================
-mongoose.connect(configDB.url); // connect to our database
+mongoose.connect(config.db.url); // connect to our database
 
 require('./config/passport')(passport); // pass passport for configuration
 
@@ -35,7 +32,7 @@ app.set('view engine', 'ejs'); // set up ejs for templating
 
 // required for passport
 app.use(express.static(path.join(__dirname, 'public'))); // to get local files
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(session({ secret: config.server.secret})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
@@ -45,4 +42,4 @@ require('./app/routes.js')(app, passport); // load our routes and pass in our ap
 
 // launch ======================================================================
 app.listen(port);
-console.log('The magic happens on port ' + port);
+console.log('Server listening on port ' + port);
