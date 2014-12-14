@@ -1,5 +1,5 @@
 // server.js
-var config = require('./config/config.json');
+var config = require('./lib/config/config.json');
 // set up ======================================================================
 // get all the tools we need
 var express  = require('express');
@@ -15,13 +15,13 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 var path = require('path');
 
-var git = require('./app/gitCrawler.js');
+var git = require('./lib/app/gitCrawler.js');
 git.refreshData();
 
 // configuration ===============================================================
 mongoose.connect(config.db.url); // connect to our database
 
-require('./config/passport')(passport); // pass passport for configuration
+require('./lib/config/passport')(passport); // pass passport for configuration
 
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
@@ -38,7 +38,7 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 // routes ======================================================================
-require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+require('./lib/app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
 // launch ======================================================================
 app.listen(port);
