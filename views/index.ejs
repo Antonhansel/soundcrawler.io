@@ -10,9 +10,7 @@
     <style>
         body { 
                 padding-top:80px; 
-/*                background: url('bg.jpg') no-repeat center center fixed;
-                background-size: cover;
-*/           background-color: #171d25;
+                background-color: #171d25;
               }
       </style>
   </head>
@@ -36,13 +34,25 @@
         <h1>
             <span>SoundCrawler</span>
         </h1>
-    <div class="jumbotron text-center" style="margin-top: 10px">
-    <p> Login or signup to access stats </p>
+    <div class="jumbotron text-center" style='margin-top: 10px'>
+        <p>Paste the SoundCloud url you want to download here<p>
+        <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit" id="srch-button"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+        </form>
+    <p></br></br> Login or signup to access stats </p>
         <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
         <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
     </div>
   </div>
     <script>
+        $('#srch-button').click(function(){
+            console.log("clicked");
+        });
         jQuery(document).ready(function() {
         $('body').addClass('is-active');
         });

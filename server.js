@@ -15,8 +15,13 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 var path = require('path');
 
+
+// Setting git data refresh
 var git = require('./lib/app/gitCrawler.js');
-git.refreshData();
+setInterval(function(){
+	console.log("Refreshing git informations...");
+	git.refreshData();
+}, 120000);
 
 // configuration ===============================================================
 mongoose.connect(config.db.url); // connect to our database
