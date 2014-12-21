@@ -44,6 +44,7 @@
             </div>
         </div>
         </form>
+        <p id='result'></p>
     <p></br> Login or signup to access stats </p>
         <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
         <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
@@ -56,7 +57,8 @@
         url: '/crawlsoundcloud',
         data: {'url' : document.getElementById('srch-term').value},
         success: function(body){
-            console.log(body);    
+            $('#result').append("<a href=\"" + body.url + "\" download=\"" + 
+                body.title + "\">Right click here and Save link as...</a>");
             },
         });
         });
