@@ -57,8 +57,13 @@
         url: '/crawlsoundcloud',
         data: {'url' : document.getElementById('srch-term').value},
         success: function(body){
+            if (body.error){
+            $('#result').append("Error: " + body.error);
+            }
+            else {
             $('#result').append("<a href=\"" + body.url + "\" download=\"" + 
                 body.title + "\">Right click here and select \"Save link as\"...</a></br>");
+            }
             },
         });
         });
