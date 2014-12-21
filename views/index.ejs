@@ -35,10 +35,10 @@
             <span>SoundCrawler</span>
         </h1>
     <div class="jumbotron text-center" style='margin-top: 10px'>
-        <p>Paste the SoundCloud url you want to download here<p>
+        <p>Paste your SoundCloud url here<p>
         <form class="navbar-form" role="search">
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            <input type="text" class="form-control" placeholder="Crawl" name="srch-term" id="srch-term">
             <div class="input-group-btn">
                 <button class="btn btn-default" id="srch-button" type="button"><i class="glyphicon glyphicon-search"></i></button>
             </div>
@@ -58,13 +58,21 @@
         data: {'url' : document.getElementById('srch-term').value},
         success: function(body){
             $('#result').append("<a href=\"" + body.url + "\" download=\"" + 
-                body.title + "\">Right click here and Save link as...</a>");
+                body.title + "\">Right click here and select \"Save link as\"...</a></br>");
             },
         });
         });
         jQuery(document).ready(function() {
         $('body').addClass('is-active');
         });
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-18148585-8', 'auto');
+    ga('send', 'pageview');
     </script>
 </body>
 </html>
