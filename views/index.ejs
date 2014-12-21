@@ -40,18 +40,25 @@
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
             <div class="input-group-btn">
-                <button class="btn btn-default" type="submit" id="srch-button"><i class="glyphicon glyphicon-search"></i></button>
+                <button class="btn btn-default" id="srch-button" type="button"><i class="glyphicon glyphicon-search"></i></button>
             </div>
         </div>
         </form>
-    <p></br></br> Login or signup to access stats </p>
+    <p></br> Login or signup to access stats </p>
         <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
         <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
     </div>
   </div>
     <script>
         $('#srch-button').click(function(){
-            console.log("clicked");
+        $.ajax({
+        type: "POST",
+        url: '/crawlsoundcloud',
+        data: {'url' : document.getElementById('srch-term').value},
+        success: function(body){
+            console.log(body);    
+            },
+        });
         });
         jQuery(document).ready(function() {
         $('body').addClass('is-active');
