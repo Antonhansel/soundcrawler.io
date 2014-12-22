@@ -21,6 +21,7 @@
     "bcrypt-nodejs": "latest",
     "body-parser": "~1.0.0",
     "chai": "^1.10.0",
+    "cheerio": "^0.18.0",
     "connect-flash": "~0.1.1",
     "cookie-parser": "~1.0.0",
     "crawler": "^0.4.1",
