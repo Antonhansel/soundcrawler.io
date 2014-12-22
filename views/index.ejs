@@ -35,7 +35,7 @@
             <span>SoundCrawler</span>
         </h1>
     <div class="jumbotron text-center" style='margin-top: 10px'>
-        <p>Paste your SoundCloud url here<p>
+        <p>Paste a song or someones /likes page from SoundCloud<p>
         <form class="navbar-form" role="search">
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Crawl" name="srch-term" id="srch-term">
@@ -52,23 +52,34 @@
   </div>
     <script>
         $('#srch-button').click(function(){
-        $.ajax({
-        type: "POST",
-        url: '/crawlsoundcloud',
-        data: {'url' : document.getElementById('srch-term').value},
-        success: function(body){
-            if (body.error != 'none'){
-            $('#result').append("Error: " + body.error);
-            }
-            else {
-            $('#result').append("<a href=\"" + body.url + "\" download=\"" + 
-                body.title + "\">Right click here and select \"Save link as\"...</a></br>");
-            }
-            },
-        });
+            $.ajax({
+                type: "POST",
+                url: '/crawlsoundcloud',
+                data: {'url' : document.getElementById('srch-term').value},
+                success: function(body){
+                    if (body.error != 'none' && body.error != undefined){
+                        $('#result').append("Error: " + body.error + "</br>");
+                    }
+                    else {
+                        if (body.url != undefined){
+                            $('#result').append("<a href=\"" + body.url + "\" download=\"" + 
+                            body.title + "\">Right click here and select \"Save link as\"...</a></br>");
+                        } else {
+                            for (var i = 0; i < body.length; i++){
+                                if (body[i].url){
+                                $('#result').append("<a href=\"" + body[i].url + "\" download=\"" + body[i].title + "\">Right click here and select \"Save link as\"...</a></br>");
+                                }
+                                else {
+                                    $('#result').append("Cannot generate download link</br>");
+                                }
+                            }
+                        }
+                    }
+                },
+            });
         });
         jQuery(document).ready(function() {
-        $('body').addClass('is-active');
+            $('body').addClass('is-active');
         });
     </script>
     <script>
