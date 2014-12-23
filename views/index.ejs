@@ -38,7 +38,7 @@
         <p>Paste a song or someones /likes page from SoundCloud<p>
         <form class="navbar-form" role="search">
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Crawl" name="srch-term" id="srch-term">
+            <input type="text" class="form-control" placeholder="Crawl" name="srch-term" id="srch-term"  onkeydown="return ignoreEnter(event);">
             <div class="input-group-btn">
                 <button class="btn btn-default" id="srch-button" type="button"><i class="glyphicon glyphicon-search"></i></button>
             </div>
@@ -51,6 +51,12 @@
     </div> -->
   </div>
     <script>
+        function ignoreEnter(event)
+        {
+          if (event.keyCode == 13) {
+            return false;
+          }
+        }
         $('#srch-button').click(function(){
             $.ajax({
                 type: "POST",
