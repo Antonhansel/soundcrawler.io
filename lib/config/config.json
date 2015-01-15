@@ -26,5 +26,6 @@
 					"chesse_m", 
     				"sabot_t", 
     				"farabe_j"]
-	}
+	},
+	"deepness" : "10"
 }
